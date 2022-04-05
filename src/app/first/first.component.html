@@ -1,0 +1,54 @@
+
+
+
+<div class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-3">
+
+            <input  [(ngModel)]="newHero.name"  type="text" class="form-control m-1" placeholder="name">
+
+        </div>
+
+        <div class="col-3">
+
+            <input [(ngModel)]="newHero.power" type="number" class="form-control m-1" placeholder="power">
+
+
+        </div>
+
+        <div class="col-3">
+
+            <input [(ngModel)]="newHero.image" type="text" class="form-control m-1" placeholder="image">
+
+        </div>
+
+        <div class="col-3">
+            <button (click)="ajout()"  type="button" class="btn btn-danger m-1 form-control">Create</button>
+        </div>
+
+    </div>
+
+
+    <div class="row mt-5">
+
+        <div class="col-3" *ngFor=" let h of listHero " >
+
+            <div class="card" >
+                <img [src]="h.image" class="card-img-top w-100" alt="...">
+                <div class="card-body">
+
+                  <p class="card-text"> {{ h.name }} </p>
+
+                  <p class="card-text"> {{ h.power }} </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
