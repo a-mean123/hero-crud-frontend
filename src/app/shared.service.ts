@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,17 +6,34 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
 
-  constructor() { }
+  constructor( private http: HttpClient ) { }
 
 
-  listHero : any = [];
+  url = 'http://127.0.0.1:3000/hero/';
 
 
-  ajouter(hero: any){
 
-    this.listHero.push(hero)
+  create( hero: any ){
+
+   return  this.http.post(     this.url + 'ajout'  ,   hero    );
 
   }
+
+
+  getAllHero(){
+
+    return  this.http.get( this.url + 'all' );
+
+  }
+
+
+
+  deleteHero(id: any){
+
+    return this.http.delete( this.url + 'supprimer/' + id );
+
+  }
+
 
 
 }
