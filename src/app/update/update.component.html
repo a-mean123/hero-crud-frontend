@@ -1,0 +1,26 @@
+<div class="row mt-5">
+
+    <div class="col-3">
+
+        <input [(ngModel)]="hero.name"  type="text" class="form-control m-1" placeholder="name">
+
+    </div>
+
+    <div class="col-3">
+
+        <input  [(ngModel)]="hero.power" type="number" class="form-control m-1" placeholder="power">
+
+
+    </div>
+
+    <div class="col-3">
+
+        <input [(ngModel)]="hero.image"  type="text" class="form-control m-1" placeholder="image">
+
+    </div>
+
+    <div class="col-3">
+        <button (click)="update()"  type="button" class="btn btn-danger m-1 form-control">update</button>
+    </div>
+
+</div>

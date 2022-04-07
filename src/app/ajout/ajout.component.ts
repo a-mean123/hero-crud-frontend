@@ -18,13 +18,25 @@ export class AjoutComponent implements OnInit {
   newHero = {
     name: '',
     power: 0,
-    image: ''
+  }
+
+  myFile: any;
+
+
+  selectFile(event: any){
+    this.myFile = event.target.files[0];  
   }
 
 
   ajout(){
 
-      this._shared.create(this.newHero)
+      let myFormData = new FormData();
+      myFormData.append('name' , this.newHero.name );
+      myFormData.append('power', this.newHero.power.toString());
+      myFormData.append('image' , this.myFile );
+
+
+      this._shared.create(myFormData)
         .subscribe(
           (response)=>{
             
@@ -41,7 +53,6 @@ export class AjoutComponent implements OnInit {
             this.newHero = {
               name: '',
               power: 0,
-              image: ''
             }
 
             this.router.navigate(['/list']);

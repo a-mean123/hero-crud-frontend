@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AjoutComponent } from './ajout/ajout.component';
 import { ListComponent } from './list/list.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
 
@@ -12,6 +13,8 @@ const routes: Routes = [
     {   path: 'list' , component: ListComponent   },
 
     {  path: 'ajout' , component: AjoutComponent    },
+
+    { path: 'update/:id' , component: UpdateComponent },
 
     { path: '**' , component: NotfoundComponent}
 

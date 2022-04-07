@@ -3,7 +3,7 @@
     <div class="col-3" *ngFor=" let h of heros " >
 
         <div class="card" >
-            <img [src]="h.image" class="card-img-top w-100" alt="...">
+            <img [src]="'http://127.0.0.1:3000/getimage/' + h.image" class="card-img-top w-100" alt="...">
             <div class="card-body">
 
               <p class="card-text"> {{ h.name }} </p>
@@ -12,11 +12,12 @@
 
               <button (click)="delete(h._id)" class="btn btn-danger"> Delete </button>
 
+              <button class="btn btn-info" [routerLink]="[ '/update' , h._id  ]" > update </button>
             </div>
         </div>
 
 
-        
+
     </div>
 
 </div>

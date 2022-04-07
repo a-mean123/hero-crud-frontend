@@ -15,7 +15,7 @@ export class SharedService {
 
   create( hero: any ){
 
-   return  this.http.post(     this.url + 'ajout'  ,   hero    );
+   return  this.http.post(     this.url + 'create'  ,   hero    );
 
   }
 
@@ -34,6 +34,19 @@ export class SharedService {
 
   }
 
+
+  getHeroById(id: any){
+
+    return this.http.get( this.url + 'getbyid/' + id );
+
+  }
+
+
+  updateHero( id: any, hero: any ){
+
+    return this.http.put( this.url + 'update/' + id , hero );
+
+  }
 
 
 }

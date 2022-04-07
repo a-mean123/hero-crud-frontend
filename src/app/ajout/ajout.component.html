@@ -15,7 +15,7 @@
 
     <div class="col-3">
 
-        <input [(ngModel)]="newHero.image" type="text" class="form-control m-1" placeholder="image">
+        <input  type="file" (change)="selectFile($event)"  class="form-control m-1" placeholder="image">
 
     </div>
 
